@@ -2,7 +2,11 @@ defmodule Subformula do
 
     @spec is_subformula(any, any) :: []
     def is_subformula(atom, list) when is_atom(atom) do
-        list ++ atom
+        list ++ [atom]
+    end
+
+    def is_subformula([atom], list) when is_atom(atom) do
+        list ++ [atom]
     end
 
     def is_subformula([unary_connective, atom], list) when is_atom(atom) do
