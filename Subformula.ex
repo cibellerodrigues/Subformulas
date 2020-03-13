@@ -10,6 +10,6 @@ defmodule Subformula do
     end
 
     def is_subformula([left, binary, right], list) do
-        is_subformula(left, list ++ [left, binary, right])
+        is_subformula(left, list ++ [left, binary, right]) ++ is_subformula(right, list)
     end
 end
